@@ -3,5 +3,5 @@
 ## Usage
 ```
 docker-compose build
-docker-compise up
+docker-compose up
 ```
