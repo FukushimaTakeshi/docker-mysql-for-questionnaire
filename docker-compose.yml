@@ -3,6 +3,7 @@ version: '3'
 services:
   db:
     image: mysql:5.7.24
+    restart: always
     environment:
       MYSQL_DATABASE: questionnaire
       MYSQL_USER: user
@@ -11,6 +12,8 @@ services:
     ports:
       - '3306:3306'
     volumes:
+      - ./initdb.d/conf.d:/etc/mysql/conf.d
+      - ./initdb.d/sqls:/docker-entrypoint-initdb.d
       - db-data:/var/lib/mysql
 
 volumes:
